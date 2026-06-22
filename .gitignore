@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# videos tracked in git (46MB, under GitHub 100MB limit)
+# public/videos/
