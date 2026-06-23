@@ -19,10 +19,10 @@ export default function Home() {
         <Hero />
         <Stats />
         <Services />
+        <ComoFunciona3DWrapper />
         <Diferenciais />
         <Brands />
         <Portfolio />
-        <ComoFunciona3DWrapper />
         <Testimonials />
         <ContactForm />
       </main>
