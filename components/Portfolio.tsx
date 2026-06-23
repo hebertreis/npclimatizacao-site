@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 const categories = ['Todos', 'Residencial', 'Comercial', 'Construtoras']
 
@@ -11,6 +12,7 @@ const projects = [
     title: 'Apartamento Alto Padrão',
     location: 'Tatuapé, SP',
     description: 'Instalação de sistema VRF com 6 unidades internas.',
+    image: '/images/obras/obra-1.jpeg',
   },
   {
     id: 2,
@@ -18,6 +20,7 @@ const projects = [
     title: 'Escritório Corporativo',
     location: 'Paulista, SP',
     description: 'Projeto completo de climatização para escritório de 800m².',
+    image: '/images/obras/obra-2.jpeg',
   },
   {
     id: 3,
@@ -25,6 +28,7 @@ const projects = [
     title: 'Empreendimento Residencial',
     location: 'Grande SP',
     description: '120 unidades instaladas em condomínio de alto padrão.',
+    image: '/images/obras/obra-3.jpeg',
   },
   {
     id: 4,
@@ -32,6 +36,7 @@ const projects = [
     title: 'Casa de Alto Padrão',
     location: 'Moema, SP',
     description: 'Sistema de ductos com controle inteligente por ambiente.',
+    image: '/images/obras/obra-4.jpeg',
   },
   {
     id: 5,
@@ -39,6 +44,7 @@ const projects = [
     title: 'Loja de Varejo',
     location: 'Vila Mariana, SP',
     description: 'Instalação de cassetes para área de vendas de 400m².',
+    image: '/images/obras/obra-2.jpeg',
   },
   {
     id: 6,
@@ -46,8 +52,15 @@ const projects = [
     title: 'Torre Comercial',
     location: 'Itaim Bibi, SP',
     description: 'Infraestrutura e instalação para 15 andares de escritórios.',
+    image: '/images/obras/obra-3.jpeg',
   },
 ]
+
+const IconPin = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
+  </svg>
+)
 
 export default function Portfolio() {
   const [active, setActive] = useState('Todos')
@@ -87,12 +100,14 @@ export default function Portfolio() {
               className="rounded-xl overflow-hidden shadow-sm border"
               style={{ borderColor: '#e0f2fe' }}
             >
-              {/* Placeholder image area */}
-              <div
-                className="flex items-center justify-center h-48 text-sm font-medium"
-                style={{ background: '#1a3a5c', color: '#7ab8d8' }}
-              >
-                📷 Foto da Obra
+              <div className="relative h-48 w-full">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
               <div className="p-5">
                 <span
@@ -104,7 +119,9 @@ export default function Portfolio() {
                 <h3 className="font-bold text-base mt-2 mb-1" style={{ color: '#1a3a5c' }}>
                   {project.title}
                 </h3>
-                <p className="text-xs text-gray-500 mb-2">📍 {project.location}</p>
+                <p className="text-xs text-gray-500 mb-2 flex items-center gap-1">
+                  <IconPin /> {project.location}
+                </p>
                 <p className="text-sm text-gray-600">{project.description}</p>
               </div>
             </div>

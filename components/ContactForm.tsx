@@ -54,7 +54,11 @@ export default function ContactForm() {
             className="text-center py-12 rounded-2xl"
             style={{ background: '#1a3a5c', border: '1px solid rgba(6,182,212,0.4)' }}
           >
-            <div className="text-5xl mb-4">✅</div>
+            <div className="flex justify-center mb-4">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
             <h3 className="text-xl font-bold text-white mb-2">
               Mensagem enviada com sucesso!
             </h3>
@@ -166,8 +170,11 @@ export default function ContactForm() {
               {loading ? 'Enviando...' : 'Quero meu Orçamento Gratuito'}
             </button>
 
-            <p className="text-center text-xs text-blue-400">
-              🔒 Seus dados estão seguros. Não enviamos spam.
+            <p className="text-center text-xs text-blue-400 flex items-center justify-center gap-1.5">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" />
+              </svg>
+              Seus dados estão seguros. Não enviamos spam.
             </p>
           </form>
         )}
