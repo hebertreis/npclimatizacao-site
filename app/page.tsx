@@ -5,7 +5,6 @@ import Services from '@/components/Services'
 import Diferenciais from '@/components/Diferenciais'
 import Brands from '@/components/Brands'
 import Portfolio from '@/components/Portfolio'
-import ComoFunciona3DWrapper from '@/components/ComoFunciona3DWrapper'
 import Testimonials from '@/components/Testimonials'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -19,7 +18,6 @@ export default function Home() {
         <Hero />
         <Stats />
         <Services />
-        <ComoFunciona3DWrapper />
         <Diferenciais />
         <Brands />
         <Portfolio />
