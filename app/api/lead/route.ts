@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { nome, whatsapp, servico, mensagem } = body
+    const { nome, whatsapp, servico, mensagem, metragem } = body
 
     if (!nome || !whatsapp || !servico) {
       return NextResponse.json({ error: 'Campos obrigatórios faltando' }, { status: 400 })
@@ -20,6 +20,7 @@ export async function POST(req: NextRequest) {
           nome,
           whatsapp,
           servico,
+          metragem: metragem || '',
           mensagem: mensagem || '',
           timestamp: new Date().toISOString(),
           origem: 'site-npclimatizacao',

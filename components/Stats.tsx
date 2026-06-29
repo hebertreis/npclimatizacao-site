@@ -1,32 +1,49 @@
 const stats = [
-  { value: '15+', label: 'Anos de Experiência' },
-  { value: '500+', label: 'Clientes Atendidos' },
-  { value: '1.000+', label: 'Projetos Realizados' },
-  { value: '12', label: 'Marcas Parceiras' },
-]
+  { value: "15+", label: "Anos de Experiência" },
+  { value: "500+", label: "Clientes Atendidos" },
+  { value: "1.000+", label: "Projetos Realizados" },
+  { value: "12", label: "Marcas Parceiras" },
+];
 
 export default function Stats() {
   return (
-    <section style={{ background: '#0e2a42' }}>
-      <div className="max-w-7xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <section style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: "var(--border)" }}>
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="text-center rounded-xl px-4 py-5"
-              style={{ background: '#1a3a5c', border: '1px solid rgba(6,182,212,0.3)' }}
+              className="text-center px-6 py-8"
+              style={{ background: "var(--surface)" }}
             >
               <p
-                className="text-3xl font-bold mb-1"
-                style={{ color: '#06b6d4' }}
+                style={{
+                  fontFamily: "var(--font-display, 'Barlow Condensed', sans-serif)",
+                  fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
+                  fontWeight: 800,
+                  color: "var(--text)",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1,
+                  marginBottom: "0.35rem",
+                }}
               >
                 {stat.value}
               </p>
-              <p className="text-sm text-blue-200">{stat.label}</p>
+              <p
+                style={{
+                  fontSize: "0.7rem",
+                  fontWeight: 500,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "var(--text-muted)",
+                }}
+              >
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
