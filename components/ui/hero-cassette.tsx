@@ -31,8 +31,8 @@ function usePrefersReducedMotion() {
 }
 
 export default function HeroCassette({
-  assembledSrc = "/images/WhatsApp Image 2026-06-23 at 8.48.11 AM.jpeg",
-  explodedSrc = "/images/WhatsApp Image 2026-06-23 at 8.48.11 AM.jpeg",
+  assembledSrc = "/images/cassete-montado.png",
+  explodedSrc = "/images/cassete-explodido.jpg",
   titleTop = "NP",
   titleBottom = "CLIMATIZAÇÃO",
 }: HeroCassetteProps) {
